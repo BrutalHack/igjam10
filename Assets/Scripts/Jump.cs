@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Threading;
 
 public class Jump : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class Jump : MonoBehaviour
     private bool flyUp = false;
     private bool flyTop = false;
     private bool flyDown = true;
+    private bool canJump = false;
+    private bool start = false;
+    private bool emergency = false;
 
     // Use this for initialization
     void Start()
@@ -31,9 +35,11 @@ public class Jump : MonoBehaviour
 
     public void PrepareJump()
     {
-        if (isGrounded)
+        if (canJump)
         {
             animator.SetTrigger("Start");
+            Debug.Log("Start");
+            start = true;
         }
     }
 
@@ -44,7 +50,7 @@ public class Jump : MonoBehaviour
             flyTop = true;
             Debug.Log("Top");
             animator.SetTrigger("Top");
-        }else if (!flyDown && playerRigidbody.velocity.y < -0.5)
+        }else if (!flyDown && !isGrounded && playerRigidbody.velocity.y < -0.1)
         {
             flyDown = true;
             Debug.Log("Down");
@@ -53,6 +59,16 @@ public class Jump : MonoBehaviour
         else if (flyDown && isGrounded)
         {
             animator.SetTrigger("Land");
+            Debug.Log("Land");
+            animator.SetBool("FlyDown", false);
+            flyDown = false;
+            flyTop = false;
+            flyUp = false;
+        }else if (!emergency && !canJump && isGrounded && playerRigidbody.velocity.y == 0)
+        {
+            emergency = true;
+            animator.SetTrigger("Emergency");
+            Debug.Log("Emergency Land");
             animator.SetBool("FlyDown", false);
             flyDown = false;
             flyTop = false;
@@ -77,16 +93,28 @@ public class Jump : MonoBehaviour
         Debug.DrawLine(transform.position, transform.position + relativeDownFront * GroundCheckLength, Color.yellow);
     }
 
-
-
     public void StartJump(Vector3 jumpVector)
     {
-        if (isGrounded)
+        if (canJump && start)
         {
             playerRigidbody.AddForce(jumpVector, ForceMode.Impulse);
             animator.SetTrigger("Up");
             Debug.Log("Up");
             flyUp = true;
+            canJump = false;
         }
+        start = false;
+    }
+
+    public void AllowJump()
+    {
+        canJump = true;
+        Debug.Log("Allow");
+        emergency = false;
+        animator.ResetTrigger("Start");
+        animator.ResetTrigger("Up");
+        animator.ResetTrigger("Top");
+        animator.ResetTrigger("Land");
+        animator.ResetTrigger("Emergency");
     }
 }

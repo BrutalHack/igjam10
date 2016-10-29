@@ -26,10 +26,8 @@ public class PlayerMouseInput : MonoBehaviour
     private Vector3 calculateJump(Vector3 from, Vector3 to)
     {
         Vector3 vector = from - to;
-        Debug.Log("Vector: " + vector);
         vector /= damper;
-        Debug.Log("Damped Vector: " + vector);
-        return reduceVector(vector);
+        return reduceVector(vector + new Vector3(0, 2 , 0));
     }
 
     private Vector3 reduceVector(Vector3 vector)
@@ -55,7 +53,6 @@ public class PlayerMouseInput : MonoBehaviour
 
     private void jump(Vector3 jumpVector)
     {
-        Debug.Log("Hello Jump with " + jumpVector);
         GetComponent<Jump>().StartJump(jumpVector);
     }
 }
