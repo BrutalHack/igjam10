@@ -1,26 +1,50 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Jump : MonoBehaviour
 {
-	private Vector3 fromPosition;
-	private Vector3 toPosition;
+    private Rigidbody playerRigidbody;
+    [SerializeField] private bool isGrounded;
+    public LayerMask GroundLayers;
+    public float GroundCheckLength = 0.0f;
 
-	// Update is called once per frame
-	void Update()
-	{
-		if (Input.GetMouseButtonDown(0))
-		{
-			fromPosition = Input.mousePosition;
-		}
-		else if (Input.GetMouseButtonUp(0))
-		{
-			toPosition = Input.mousePosition;
-			jump(fromPosition-toPosition);
-		}
-	}
+    // Use this for initialization
+    void Start()
+    {
+        playerRigidbody = GetComponent<Rigidbody>();
+        GroundCheckLength += GetComponent<CapsuleCollider>().height / 2;
+        Debug.Log("Length: " + GroundCheckLength);
+    }
 
-	private void jump(Vector3 jumpVector)
-	{
-		GetComponent<Rigidbody>().AddForce(jumpVector);
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        UpdateIsGrounded();
+    }
+
+    private void UpdateIsGrounded()
+    {
+        Vector3 relativeDown = transform.TransformDirection(Vector3.down);
+        Vector3 relativeDownFront = transform.TransformDirection(Vector3.down) +
+                                    transform.TransformDirection(Vector3.right);
+        Vector3 relativeDownBack = transform.TransformDirection(Vector3.down) +
+                                   transform.TransformDirection(Vector3.left);
+        relativeDownFront.Normalize();
+        relativeDownFront = relativeDownFront * relativeDown.magnitude;
+        relativeDownBack.Normalize();
+        relativeDownBack = relativeDownBack * relativeDown.magnitude;
+        isGrounded = Physics.Raycast(transform.position, relativeDown, GroundCheckLength, GroundLayers);
+        Debug.Log(isGrounded);
+        Debug.DrawLine(transform.position, transform.position + (relativeDown * GroundCheckLength), Color.red);
+        Debug.DrawLine(transform.position, transform.position + (relativeDownBack * GroundCheckLength), Color.blue);
+        Debug.DrawLine(transform.position, transform.position + (relativeDownFront * GroundCheckLength), Color.yellow);
+    }
+
+    public void StartJump(Vector3 jumpVector)
+    {
+        if (isGrounded)
+        {
+            playerRigidbody.AddForce(jumpVector, ForceMode.Impulse);
+        }
+    }
 }

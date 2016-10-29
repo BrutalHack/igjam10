@@ -103,14 +103,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 606285098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 480c06b0ec5e9498bb70409c14f8d114, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a0b7f41ac3e64a7db212932b0577c7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
   GroundLayers:
     serializedVersion: 2
     m_Bits: 1
-  GroundCheckLength: 0.05
+  GroundCheckLength: 0.2
+--- !u!114 &606285107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 606285098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47e5de0eb76f4e619cf398a8ce233e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &986183464
 Prefab:
   m_ObjectHideFlags: 0
