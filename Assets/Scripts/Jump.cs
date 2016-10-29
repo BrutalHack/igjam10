@@ -34,10 +34,9 @@ public class Jump : MonoBehaviour
         relativeDownBack.Normalize();
         relativeDownBack = relativeDownBack * relativeDown.magnitude;
         isGrounded = Physics.Raycast(transform.position, relativeDown, GroundCheckLength, GroundLayers);
-        Debug.Log(isGrounded);
-        Debug.DrawLine(transform.position, transform.position + (relativeDown * GroundCheckLength), Color.red);
-        Debug.DrawLine(transform.position, transform.position + (relativeDownBack * GroundCheckLength), Color.blue);
-        Debug.DrawLine(transform.position, transform.position + (relativeDownFront * GroundCheckLength), Color.yellow);
+        Debug.DrawLine(transform.position, transform.position + relativeDown * GroundCheckLength, Color.red);
+        Debug.DrawLine(transform.position, transform.position + relativeDownBack * GroundCheckLength, Color.blue);
+        Debug.DrawLine(transform.position, transform.position + relativeDownFront * GroundCheckLength, Color.yellow);
     }
 
     public void StartJump(Vector3 jumpVector)
