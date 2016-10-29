@@ -252,7 +252,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012948989162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.247, y: 2.31, z: 0}
+  m_LocalPosition: {x: -4.0791693, y: 2.4527366, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -522,7 +522,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.247, y: 2.31, z: 0}
+  m_ConnectedAnchor: {x: -4.0791693, y: 2.4527366, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -554,7 +554,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!65 &65000011868750404
 BoxCollider:
@@ -566,7 +566,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!65 &65000013446686744
 BoxCollider:
@@ -578,7 +578,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!65 &65000013707197320
 BoxCollider:
@@ -590,7 +590,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!135 &135000011540138028
 SphereCollider:

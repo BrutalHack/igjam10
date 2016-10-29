@@ -292,7 +292,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011243159046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.492, y: 1.854, z: 0}
+  m_LocalPosition: {x: -3.611047, y: 3.5267587, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -748,7 +748,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!65 &65000012158359744
 BoxCollider:
@@ -760,7 +760,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!65 &65000012755737458
 BoxCollider:
@@ -772,7 +772,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!65 &65000012822200806
 BoxCollider:
@@ -784,7 +784,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!65 &65000013122890264
 BoxCollider:
@@ -796,7 +796,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!65 &65000014002133770
 BoxCollider:
@@ -808,7 +808,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38142905, y: 0.49013567, z: 6.123234e-17}
+  m_Size: {x: 0.38142905, y: 0.49013567, z: 1}
   m_Center: {x: -0.012537679, y: -0.00000015894572, z: 0}
 --- !u!135 &135000013713136706
 SphereCollider:
