@@ -14,6 +14,7 @@ public class PlayerMouseInput : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             fromPosition = Input.mousePosition;
+            GetComponent<Jump>().PrepareJump();
         }
         else if (Input.GetMouseButtonUp(0))
         {
