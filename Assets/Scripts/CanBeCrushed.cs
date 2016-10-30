@@ -16,10 +16,9 @@ public class CanBeCrushed : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        MaximumPressure = 2f;
         if (collision.impulse.magnitude > MaximumPressure)
         {
-            Debug.Log("Wanze wurde zerquestscht");
+            Debug.Log("Wanze wurde zerquestscht " + collision.impulse.magnitude);
         }
     }
 }
