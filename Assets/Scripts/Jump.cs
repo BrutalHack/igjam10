@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Threading;
 
 public class Jump : MonoBehaviour
 {
@@ -38,7 +36,6 @@ public class Jump : MonoBehaviour
         if (canJump)
         {
             animator.SetTrigger("Start");
-            Debug.Log("Start");
             start = true;
         }
     }
@@ -48,18 +45,15 @@ public class Jump : MonoBehaviour
         if (flyUp && !flyTop && playerRigidbody.velocity.y == 0)
         {
             flyTop = true;
-            Debug.Log("Top");
             animator.SetTrigger("Top");
         }else if (!flyDown && !isGrounded && playerRigidbody.velocity.y < -0.1)
         {
             flyDown = true;
-            Debug.Log("Down");
             animator.SetBool("FlyDown", true);
         }
         else if (flyDown && isGrounded)
         {
             animator.SetTrigger("Land");
-            Debug.Log("Land");
             animator.SetBool("FlyDown", false);
             flyDown = false;
             flyTop = false;
@@ -68,7 +62,6 @@ public class Jump : MonoBehaviour
         {
             emergency = true;
             animator.SetTrigger("Emergency");
-            Debug.Log("Emergency Land");
             animator.SetBool("FlyDown", false);
             flyDown = false;
             flyTop = false;
@@ -99,7 +92,6 @@ public class Jump : MonoBehaviour
         {
             playerRigidbody.AddForce(jumpVector, ForceMode.Impulse);
             animator.SetTrigger("Up");
-            Debug.Log("Up");
             flyUp = true;
             canJump = false;
         }
@@ -109,7 +101,6 @@ public class Jump : MonoBehaviour
     public void AllowJump()
     {
         canJump = true;
-        Debug.Log("Allow");
         emergency = false;
         animator.ResetTrigger("Start");
         animator.ResetTrigger("Up");

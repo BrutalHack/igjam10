@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
-    public int nextSceneId = 1;
+    public string nextScene = "Demo";
 
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(nextSceneId);
+        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
 }

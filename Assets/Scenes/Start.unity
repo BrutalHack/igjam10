@@ -219,11 +219,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013045744232, guid: d57c1e8dad793456e960d11494a2dd1b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.876634
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4000013045744232, guid: d57c1e8dad793456e960d11494a2dd1b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.2944005
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4000013045744232, guid: d57c1e8dad793456e960d11494a2dd1b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -259,6 +259,18 @@ Prefab:
       propertyPath: m_ConnectedAnchor.y
       value: 0.68
       objectReference: {fileID: 0}
+    - target: {fileID: 4000013045744232, guid: d57c1e8dad793456e960d11494a2dd1b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.1384497
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013045744232, guid: d57c1e8dad793456e960d11494a2dd1b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.1384492
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013045744232, guid: d57c1e8dad793456e960d11494a2dd1b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.1384492
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d57c1e8dad793456e960d11494a2dd1b, type: 2}
   m_IsPrefabParent: 0
@@ -271,11 +283,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013755999538, guid: f60ff5f39e9d844719a69e9aab6798ae, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.44
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 4000013755999538, guid: f60ff5f39e9d844719a69e9aab6798ae, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.38
+      value: -2.03
       objectReference: {fileID: 0}
     - target: {fileID: 4000013755999538, guid: f60ff5f39e9d844719a69e9aab6798ae, type: 2}
       propertyPath: m_LocalPosition.z
@@ -553,7 +565,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1242938067}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 5.53, y: 2.84, z: 0}
+  m_LocalPosition: {x: 5.9, y: 2.61, z: 0}
   m_LocalScale: {x: 3.2214885, y: 2.2230663, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_Children: []
@@ -570,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efb463da1de17643a234ab462ddbea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneId: 1
+  nextScene: Demo
 --- !u!1001 &2073939850
 Prefab:
   m_ObjectHideFlags: 0
