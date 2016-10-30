@@ -38,6 +38,10 @@ public class Jump : MonoBehaviour
             animator.SetTrigger("Start");
             start = true;
         }
+        else
+        {
+            GetComponent<Drop>().drop();
+        }
     }
 
     private void CheckVelocityForAnimation()
@@ -58,7 +62,7 @@ public class Jump : MonoBehaviour
             flyDown = false;
             flyTop = false;
             flyUp = false;
-        }else if (!emergency && !canJump && isGrounded && playerRigidbody.velocity.y == 0)
+        }else if (!emergency && !canJump && isGrounded)
         {
             emergency = true;
             animator.SetTrigger("Emergency");
