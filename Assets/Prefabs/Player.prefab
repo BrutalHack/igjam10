@@ -27,7 +27,7 @@ GameObject:
   - 95: {fileID: 95000012495759060}
   - 114: {fileID: 114000011132487678}
   - 114: {fileID: 114000014085882408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 4000013150228430}
   - 33: {fileID: 33000013030800968}
   - 23: {fileID: 23000013465460782}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012770924090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1, y: -0.19, z: 0}
+  m_LocalPosition: {x: -6.77, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f65850b7f1b7431abec0e9c035a01de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaximumPressure: 2
+  MaximumPressure: 5
 --- !u!114 &114000014085882408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,7 +219,7 @@ MonoBehaviour:
   isGrounded: 0
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 257
   GroundCheckLength: 0.2
 --- !u!136 &136000013516561390
 CapsuleCollider:
