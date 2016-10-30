@@ -8,7 +8,7 @@ public class NextLevel : MonoBehaviour
     {
         Debug.Log("Loading Scene " + SceneManager.GetActiveScene().buildIndex + 1);
         int nextSceneId = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextSceneId >= SceneManager.sceneCount)
+        if (nextSceneId >= SceneManager.sceneCountInBuildSettings)
         {
             nextSceneId = 0;
         }
