@@ -8,6 +8,7 @@ public class PlayerMouseInput : MonoBehaviour
     private float damper = 20;
     private float jumpHeight = 10;
     private float jumpLength = 5;
+    private bool draw = false;
 
     // Update is called once per frame
     void Update()
@@ -16,9 +17,12 @@ public class PlayerMouseInput : MonoBehaviour
         {
             fromPosition = Input.mousePosition;
             GetComponent<Jump>().PrepareJump();
+            draw = true;
         }
         else if (Input.GetMouseButtonUp(0))
         {
+            draw = false;
+            Destroy(GetComponent<LineRenderer>());
             toPosition = Input.mousePosition;
             if ((fromPosition - toPosition).y < 0)
             {
@@ -35,6 +39,10 @@ public class PlayerMouseInput : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
+        }
+        if (draw)
+        {
+            DrawLine();
         }
     }
 
@@ -69,5 +77,27 @@ public class PlayerMouseInput : MonoBehaviour
     private void jump(Vector3 jumpVector)
     {
         GetComponent<Jump>().StartJump(jumpVector);
+    }
+
+    private void DrawLine()
+    {
+        LineRenderer line = GetComponent<LineRenderer>();
+        if (GetComponent<LineRenderer>() == null)
+        {
+            line = gameObject.AddComponent<LineRenderer>();
+            line.material = new Material(Shader.Find("Particles/Additive"));
+        }
+        line.SetColors(Color.white, Color.red);
+        line.SetPosition(0, worldPoint(fromPosition));
+        line.SetPosition(1, worldPoint(Input.mousePosition));
+        line.SetWidth(0.05f, 0.1f);
+    }
+
+    private Vector3 worldPoint(Vector3 position)
+    {
+        Camera cam = Camera.main;
+        Vector3 pos = position;
+        pos.z = cam.nearClipPlane+0.2f;
+        return cam.ScreenToWorldPoint(pos);
     }
 }
