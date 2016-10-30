@@ -14,6 +14,7 @@ public class Jump : MonoBehaviour
     private bool canJump = false;
     private bool start = false;
     private bool emergency = false;
+    private bool detonateJump = false;
 
     // Use this for initialization
     void Start()
@@ -33,14 +34,14 @@ public class Jump : MonoBehaviour
 
     public void PrepareJump()
     {
-        if (canJump)
+        if(!canJump)
+        {
+            GetComponent<Drop>().drop();
+        }
+        if (canJump && !start)
         {
             animator.SetTrigger("Start");
             start = true;
-        }
-        else
-        {
-            GetComponent<Drop>().drop();
         }
     }
 
@@ -62,8 +63,14 @@ public class Jump : MonoBehaviour
             flyDown = false;
             flyTop = false;
             flyUp = false;
+            detonateJump = false;
         }else if (!emergency && !canJump && isGrounded)
         {
+            if (detonateJump)
+            {
+                detonateJump = false;
+                return;
+            }
             emergency = true;
             animator.SetTrigger("Emergency");
             animator.SetBool("FlyDown", false);
@@ -98,6 +105,7 @@ public class Jump : MonoBehaviour
             animator.SetTrigger("Up");
             flyUp = true;
             canJump = false;
+            detonateJump = true;
         }
         start = false;
     }
@@ -105,6 +113,7 @@ public class Jump : MonoBehaviour
     public void BreakUpJump()
     {
         animator.SetTrigger("Emergency");
+        start = false;
     }
 
     public void AllowJump()
