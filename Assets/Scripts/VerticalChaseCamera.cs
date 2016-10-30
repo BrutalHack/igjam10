@@ -14,7 +14,6 @@ public class VerticalChaseCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-
     void Update()
     {
         if (chasedObject.transform.position.y > MinimumY &&

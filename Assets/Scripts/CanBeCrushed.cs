@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CanBeCrushed : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class CanBeCrushed : MonoBehaviour
     {
         if (collision.impulse.magnitude > MaximumPressure)
         {
-            Debug.Log("Wanze wurde zerquestscht " + collision.impulse.magnitude);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
