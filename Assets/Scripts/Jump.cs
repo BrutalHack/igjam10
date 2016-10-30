@@ -98,6 +98,11 @@ public class Jump : MonoBehaviour
         start = false;
     }
 
+    public void BreakUpJump()
+    {
+        animator.SetTrigger("Emergency");
+    }
+
     public void AllowJump()
     {
         canJump = true;

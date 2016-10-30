@@ -19,6 +19,12 @@ public class PlayerMouseInput : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             toPosition = Input.mousePosition;
+            if ((fromPosition - toPosition).y < 0)
+            {
+                Debug.Log("NOP NOP NOP");
+                GetComponent<Jump>().BreakUpJump();
+                return;
+            }
             jump(calculateJump(fromPosition, toPosition));
         }
     }
@@ -27,7 +33,7 @@ public class PlayerMouseInput : MonoBehaviour
     {
         Vector3 vector = from - to;
         vector /= damper;
-        return reduceVector(vector + new Vector3(0, 2 , 0));
+        return reduceVector(vector + new Vector3(0, 2, 0));
     }
 
     private Vector3 reduceVector(Vector3 vector)
