@@ -6,7 +6,6 @@ public class NextLevel : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Loading Scene " + SceneManager.GetActiveScene().buildIndex + 1);
         int nextSceneId = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextSceneId >= SceneManager.sceneCountInBuildSettings)
         {

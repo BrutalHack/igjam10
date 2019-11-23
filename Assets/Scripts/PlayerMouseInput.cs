@@ -26,7 +26,6 @@ public class PlayerMouseInput : MonoBehaviour
             toPosition = Input.mousePosition;
             if ((fromPosition - toPosition).y < 0)
             {
-                Debug.Log("NOP NOP NOP");
                 GetComponent<Jump>().BreakUpJump();
                 return;
             }
@@ -85,12 +84,15 @@ public class PlayerMouseInput : MonoBehaviour
         if (GetComponent<LineRenderer>() == null)
         {
             line = gameObject.AddComponent<LineRenderer>();
-            line.material = new Material(Shader.Find("Particles/Additive"));
+            line.material = new Material(Shader.Find("Legacy Shaders/Particles/Additive"));
         }
-        line.SetColors(Color.white, Color.red);
+
+        line.startColor = Color.white;
+        line.endColor = Color.red;
         line.SetPosition(0, worldPoint(fromPosition));
         line.SetPosition(1, worldPoint(Input.mousePosition));
-        line.SetWidth(0.05f, 0.1f);
+        line.startWidth = 0.05f;
+        line.endWidth = 0.3f;
     }
 
     private Vector3 worldPoint(Vector3 position)

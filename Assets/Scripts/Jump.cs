@@ -22,7 +22,6 @@ public class Jump : MonoBehaviour
         animator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
         GroundCheckLength += GetComponent<CapsuleCollider>().height / 2;
-        Debug.Log("Length: " + GroundCheckLength);
     }
 
     // Update is called once per frame
