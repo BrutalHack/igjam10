@@ -2,7 +2,7 @@
 
 ![Screenshot](https://brutalhack.com/wp-content/uploads/2016/12/wanze.jpg)
 
-More Information at https://brutalhack.com/games/igjam10/
+Game available for free at https://brutalhack.com/games/igjam10/
 
 # Game Description
 
